@@ -88,7 +88,7 @@ public class Spielfeld
     }
     
     private int zufallsfarbe(){
-        int index = zufallsgernerator.nextInt() //Test
+        int index = zufallsgernerator.nextInt()
         int test
         new Color(zufallsgenerator.nextInt(255),zufallsgenerator.nextInt(255),zufallsgenerator.nextInt(255));
     }
