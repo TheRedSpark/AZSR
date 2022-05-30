@@ -12,7 +12,7 @@ public class Spielfeld
     // instance variables - replace the example below with your own
     private int a = 1000;
     private int b = 1000;
-    private static Random zufallsgenerator = newRandom()
+    private static Random zufallszahl = newRandom();
 
     /**
      * Constructor for objects of class Spielfeld
@@ -81,15 +81,11 @@ public class Spielfeld
     }
     
     private int zufallszahl(int von, int bis){
-        Random zufallsgenerator;       //BlueJ Buch Seite 230
-        zufallsgenerator = new Random();
-        int index = zufallsgenerator.nextInt(int n);
-        System.out.println(index);
+        return von +zufallszahl.nextInt(bis+1);
     }
     
-    private int zufallsfarbe(){
-        int index = zufallsgernerator.nextInt()
-        int test
-        new Color(zufallsgenerator.nextInt(255),zufallsgenerator.nextInt(255),zufallsgenerator.nextInt(255));
+    private Color zufallsfarbe(){
+        Color zufallsfarbe = new Color(zufallszahl.nextInt(255),zufallszahl.nextInt(255),zufallszahl.nextInt(255));
+        return zufallsfarbe
     }
 }
