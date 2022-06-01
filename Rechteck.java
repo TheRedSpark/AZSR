@@ -13,8 +13,14 @@ public class Rechteck
     }
     public Rechteck(Punkt position,int breite,int lange,String bezeichnung,Color farbe){
             this.position = position;
-            this.breite = breite;
-            this.lange = lange;
+            if (breite <= 100 & lange <= 100){
+                this.breite = breite;
+                this.lange = lange;
+            }
+            else{
+                System.out.println("Gib einen gültigen Wert ein!");
+                System.exit(0);
+            }
             this.bezeichnung = bezeichnung;
             this.farbe = farbe;
             

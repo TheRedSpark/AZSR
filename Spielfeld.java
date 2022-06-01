@@ -12,7 +12,7 @@ public class Spielfeld
     // instance variables - replace the example below with your own
     private int a = 1000;
     private int b = 1000;
-    private static Random zufallszahl = newRandom();
+    private static Random zufallszahl = new Random();
 
     /**
      * Constructor for objects of class Spielfeld
@@ -79,13 +79,59 @@ public class Spielfeld
     public void poiAbfahren(){
         ArrayList<Punkt>  sortedPoi = poiSortieren(punkteEingeben());
     }
-    
-    private int zufallszahl(int von, int bis){
-        return von +zufallszahl.nextInt(bis+1);
+
+    public ArrayList<Rechteck> hindernisseErzeugen (){
+        System.out.println("Anzahl der Rechtecke bitte");
+        Scanner input = new Scanner(System.in);
+        int rechtecke = input.nextInt();
+        ArrayList<Rechteck> rechteliste = new ArrayList<Rechteck>();
+        int errorcounter = 0;
+        boolean rechteck_passt = false;
+        boolean rechteck_uberlappt = false;
+        //Rechteck(Punkt position,int breite,int lange,String bezeichnung,Color farbe){
+        for (int i=0; i<rechtecke; i++){
+            Rechteck randomRechteck = new Rechteck(new Punkt(zufallszahl(0,1000),zufallszahl(0,1000)),zufallszahl(0,1000),zufallszahl(0,1000),"Rechteck" + i,zufallsfarbe());
+            //                                                     xpunkt              ypunkt              breite              lange         bezeichnung          zufallsfarbe
+            if (randomRechteck.getPosition().getX() + randomRechteck.getLange() <= a & randomRechteck.getPosition().getY() + randomRechteck.getBreite() <= b){//überprüfen spielfeld
+                //rechteck_passt = true;
+                //pass;
+            }
+            else{
+                rechteck_passt = false;
+                errorcounter++;
+                continue;
+            }
+
+            for (int o=0; o<rechteliste.size(); o++){ //überprüfen  überlapptr
+                if (!randomRechteck.ueberlappt(rechteliste.get(o))){
+                    rechteck_uberlappt = true;
+                }
+
+                else{
+                    rechteck_uberlappt = false;
+                    errorcounter++;
+
+                }
+                if (rechteck_passt = true && rechteck_uberlappt = false){
+                    rechteliste.add(randomRechteck);
+
+                }
+                else{
+                    i--;
+                    errorcounter ++;
+                }
+            }
+            return rechteliste;
+        }
     }
     
+        private int zufallszahl(int von, int bis){
+        return von +zufallszahl.nextInt(bis+1);
+
+    }
+
     private Color zufallsfarbe(){
         Color zufallsfarbe = new Color(zufallszahl.nextInt(255),zufallszahl.nextInt(255),zufallszahl.nextInt(255));
-        return zufallsfarbe
+        return zufallsfarbe;
     }
 }
