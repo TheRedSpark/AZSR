@@ -87,16 +87,12 @@ public class Spielfeld
         ArrayList<Rechteck> rechteliste = new ArrayList<Rechteck>();
         int errorcounter = 0;
         boolean rechteck_passt = false;
-        boolean rechteck_uberlappt = false;
+        boolean rechteck_uberlapptnicht = false;
         //Rechteck(Punkt position,int breite,int lange,String bezeichnung,Color farbe){
         for (int i=0; i<rechtecke; i++){
             Rechteck randomRechteck = new Rechteck(new Punkt(zufallszahl(0,1000),zufallszahl(0,1000)),zufallszahl(0,1000),zufallszahl(0,1000),"Rechteck" + i,zufallsfarbe());
             //                                                     xpunkt              ypunkt              breite              lange         bezeichnung          zufallsfarbe
-            if (randomRechteck.getPosition().getX() + randomRechteck.getLange() <= a & randomRechteck.getPosition().getY() + randomRechteck.getBreite() <= b){//überprüfen spielfeld
-                //rechteck_passt = true;
-                //pass;
-            }
-            else{
+            if (randomRechteck.getPosition().getX() + randomRechteck.getLange() >= a & randomRechteck.getPosition().getY() + randomRechteck.getBreite() >= b){//überprüfen spielfeld
                 rechteck_passt = false;
                 errorcounter++;
                 continue;
@@ -104,28 +100,25 @@ public class Spielfeld
 
             for (int o=0; o<rechteliste.size(); o++){ //überprüfen  überlapptr
                 if (!randomRechteck.ueberlappt(rechteliste.get(o))){
-                    rechteck_uberlappt = true;
+                    rechteck_uberlapptnicht = true;
                 }
 
                 else{
-                    rechteck_uberlappt = false;
-                    errorcounter++;
-
+                    rechteck_uberlapptnicht = false;
                 }
-                if (rechteck_passt = true && rechteck_uberlappt = false){
+                if (rechteck_uberlapptnicht = false){
                     rechteliste.add(randomRechteck);
-
                 }
                 else{
                     i--;
                     errorcounter ++;
                 }
             }
-            return rechteliste;
         }
+        return rechteliste;
     }
-    
-        private int zufallszahl(int von, int bis){
+
+    private int zufallszahl(int von, int bis){
         return von +zufallszahl.nextInt(bis+1);
 
     }
