@@ -14,12 +14,18 @@ public class Spielfeld
     private int b = 1000;
     private static Random zufallszahl = new Random();
 
+    public Spielfeld()
+    {
+        Roboter Robo = new Roboter();
+    }
+
+    public static void main(String[] args) {
+
+    }
+
     /**
      * Constructor for objects of class Spielfeld
      */
-    public Spielfeld()
-    {
-    }
 
     public Punkt[] punkteEingeben()
     {

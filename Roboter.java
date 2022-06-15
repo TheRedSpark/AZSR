@@ -22,33 +22,46 @@ public class Roboter
         NAME,ALTER,HERSTELLER,GESCHLECHT;
     }
     public void spracherkennung(){
-        boolean ende = false;
-        Scanner fragenscanner = new Scanner(System.in);
-        while(ende = false){
+        boolean weitermachen = true;
+        Scanner sc = new Scanner(System.in);
+        while(weitermachen){
             System.out.println("Welche Frage hast du?");
-            String frage = fragenscanner.next().toUpperCase().trim();
-            
-            switch(frage){
-                case "ENDE":
-                    ende = true;
-                    System.out.println("Ende");
-                
-                case "NAME":
-                    System.out.println("Du bist im Case Name");
-                
-                case "ALTER":
-                    System.out.println("Du bist im Case Alter");
+            boolean gueltig = false;
+            while(sc.hasNext()){
+                String frage = sc.next().toUpperCase().trim();
+                switch(frage){
+                    case "ENDE":
+                        weitermachen = false;
+                        gueltig = true;
+                        System.out.println("Ende");
+                        break;
                     
-                case "HERSTELLER":
-                    System.out.println("Du bist im Case Hersteller");
+                    case "NAME":
+                        System.out.println("Mein Name ist Callio");
+                        gueltig = true;
+                        break;
                     
-                case "GESCHLECHT":
-                    System.out.println("Du bist im Case Geschlecht");
-                    
-                default:
-                    System.out.println("Ich habs nicht richtig verstanden versuchs erneut");
+                    case "ALTER":
+                        System.out.println("Ich bin schon groß und 4");
+                        gueltig = true;
+                        break;
+                        
+                    case "HERSTELLER":
+                        System.out.println("Diakonie");
+                        gueltig = true;
+                        break;
+                        
+                    case "GESCHLECHT":
+                        System.out.println("Krebskrank seit 30 Jahren");
+                        gueltig = true;
+                        break;
+                    default:
+                        break;
+                }
             }
             
+            if(!gueltig)
+                System.out.println("Sprich deutsch");
         }
             
     }
