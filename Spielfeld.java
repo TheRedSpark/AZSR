@@ -8,6 +8,7 @@ import java.awt.*;
  * @version (a version number or a date)
  */
 
+
 public class Spielfeld {
     // instance variables - replace the example below with your own
     private int a = 1000;
@@ -21,7 +22,7 @@ public class Spielfeld {
     public static void main(String[] args) {
 
     }
-
+    
     /**
      * Constructor for objects of class Spielfeld
      */
