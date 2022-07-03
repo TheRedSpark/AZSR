@@ -35,8 +35,8 @@ public class Punkt {
     /**
      * The function ausgabeAttribute() prints the values of the attributes x and y
      */
-    public void ausgabeAttribute() {
-        System.out.println(x + "," + y);
+    public String ausgabeAttribute() {
+        return (x+","+y);  
     }
 
     /**

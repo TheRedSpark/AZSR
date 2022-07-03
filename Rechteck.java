@@ -72,7 +72,7 @@ public class Rechteck {
         return farbe;
     }
 
-    public void setColor() {
+    public void setColor(Color farbe) {
         this.farbe = farbe;
     }
 
@@ -91,8 +91,11 @@ public class Rechteck {
     /**
      * The function `ausgabeAttribute()` prints the attributes of the object `Rechteck` to the console
      */
-    public void ausgabeAttribute() {
-        System.out.println(position + "," + breite + "," + lange + "," + bezeichnung + "," + farbe);
+    public void ausgabeAttribute() {        System.out.println("Position: " + position.ausgabeAttribute());
+        System.out.println("Breite: "+ breite);
+        System.out.println("Länge: " + lange);
+        System.out.println("Bezeichnung: " + bezeichnung);
+        System.out.println("Farbe: " + farbe);
     }
 
     /**

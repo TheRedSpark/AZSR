@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Zeichenflaeche
-comment1.params=g
-comment1.target=void\ paintComponent(java.awt.Graphics)
-comment2.params=figuren
-comment2.target=void\ repaintFiguren(java.util.ArrayList)
-numComments=3
+comment1.params=
+comment1.target=Zeichenflaeche()
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=figuren
+comment3.target=void\ repaintFiguren(java.util.ArrayList)
+numComments=4

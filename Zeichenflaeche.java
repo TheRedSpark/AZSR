@@ -7,6 +7,12 @@ public class Zeichenflaeche extends JPanel
 {
     private ArrayList<Rechteck> hindernisse;
 
+        public Zeichenflaeche()
+    {
+        super();  
+        setVisible(true);
+    }
+    
     @Override
     public void paintComponent(Graphics g) {
         for (Rechteck r: hindernisse){

@@ -92,6 +92,9 @@ public class Spielfeld {
             }
         }
 
+        // for (Punkt s : poiSort){
+            // System.out.println(s.ausgabeAttribute());
+        // }
         return poiSort;
     }
 
@@ -100,6 +103,11 @@ public class Spielfeld {
      */
     public void poiAbfahren() {
         ArrayList<Punkt> sortedPoi = poiSortieren(punkteEingeben());
+        
+        // for (Punkt s : sortedPoi){
+            // System.out.println(s.ausgabeAttribute());
+        // }
+        System.out.println(sortedPoi);
     }
 
     /**

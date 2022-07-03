@@ -1,3 +1,11 @@
 #BlueJ class context
 comment0.target=Leinwand
-numComments=1
+comment1.params=breite\ lange
+comment1.target=Leinwand(int,\ int)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Leinwand\r\n
+comment2.params=millisekunden
+comment2.target=void\ warten(int)
+comment2.text=\r\n\ wartet\ auf\ bestimmte\ Anzahl\ von\ Millisekunden\ bevor\ Schritt\ beendet\ wird.\r\n\ wird\ f\u00FCr\ animationen\ genutzt,\ um\ eine\ kurze\ verz\u00F6gerung\ zuerzeugen,\ damit\ man\ was\ erkennt\r\n\ @param\ \ milliseconds\ \ the\ number\ \r\n
+comment3.params=hindernisse
+comment3.target=void\ zeichnen(java.util.ArrayList)
+numComments=4
