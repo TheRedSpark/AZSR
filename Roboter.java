@@ -25,7 +25,7 @@ public class Roboter {
         boolean weitermachen = true;
         Scanner sc = new Scanner(System.in);
         // A while loop that is asking the user for a question.
-        while (weitermachen) {
+        loop:while (weitermachen) {
             System.out.println("Welche Frage hast du?");
             boolean gueltig = false;
             while (sc.hasNext()) {
@@ -36,7 +36,7 @@ public class Roboter {
                         weitermachen = false;
                         gueltig = true;
                         System.out.println("Ende");
-                        break;
+                        break loop;
 
                     case "NAME":
                         System.out.println("Mein Name ist Callio");
@@ -58,6 +58,7 @@ public class Roboter {
                         gueltig = true;
                         break;
                     default:
+                        System.out.println("Keine valide Frage");
                         break;
                 }
             }

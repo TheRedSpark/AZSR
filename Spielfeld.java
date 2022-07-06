@@ -8,7 +8,6 @@ import java.awt.*;
  * @version (a version number or a date)
  */
 
-
 public class Spielfeld {
     // instance variables - replace the example below with your own
     private int a = 1000;
@@ -19,10 +18,64 @@ public class Spielfeld {
         Roboter Robo = new Roboter();
     }
 
-    public static void main(String[] args) {
-
+    public static void Anrede(){
+        System.out.println("\n"+"--------------------------------");
+        System.out.println("Wähle 1 für Points of Intrest");
+        System.out.println("Wähle 2 für Hindernisse umfahren");
+        System.out.println("Wähle 3 für Stichwörter erkennen");
+        System.out.println("Wähle 4 für das Ende");
+        System.out.println("--------------------------------"+"\n");
     }
     
+    public static void main(String[] args) {
+        Spielfeld spieli = new Spielfeld();
+        Roboter robi = new Roboter();
+        Anrede();
+        int antwort;
+        loop:while (true){
+            Scanner input = new Scanner(System.in);
+            try{
+                String frage = input.next().toUpperCase().trim();
+                if (frage == "ENDE"){
+                    antwort = 4;
+                }
+                else{
+                    antwort = input.nextInt();
+                }
+            }
+            catch(Exception e){
+                System.out.println("Bitte eine Zahl eingeben");
+                continue;
+            }
+
+            switch(antwort){
+                case 1:
+                    System.out.println("Du hast die Points of Intrest gewählt");
+                    robi.spracherkennung();
+                    Anrede();
+                    break;
+                case 2:
+                    System.out.println("Du hast Hindernisse umfahren gewählt");
+                    spieli.hindernisseUmfahren();
+                    Anrede();
+                    break;
+                case 3:
+                    System.out.println("Du hast die Spracherkennung gewählt");
+                    robi.spracherkennung();
+                    Anrede();
+                    break;
+                case 4:
+                    System.out.println("Du hast das Ende gewählt");
+                    break loop;
+                default:
+                    System.out.println("Bitte eine Zahl von 1-4 wählen");
+                    break;
+            }
+
+        }
+        System.out.println("Du hast das Program beendet");
+    }
+
     /**
      * Constructor for objects of class Spielfeld
      */
@@ -93,7 +146,7 @@ public class Spielfeld {
         }
 
         // for (Punkt s : poiSort){
-            // System.out.println(s.ausgabeAttribute());
+        // System.out.println(s.ausgabeAttribute());
         // }
         return poiSort;
     }
@@ -103,9 +156,9 @@ public class Spielfeld {
      */
     public void poiAbfahren() {
         ArrayList<Punkt> sortedPoi = poiSortieren(punkteEingeben());
-        
+
         // for (Punkt s : sortedPoi){
-            // System.out.println(s.ausgabeAttribute());
+        // System.out.println(s.ausgabeAttribute());
         // }
         System.out.println(sortedPoi);
     }
@@ -148,6 +201,14 @@ public class Spielfeld {
             }
         }
         return rechteliste;
+    }
+
+    public void zeichnen(ArrayList<Rechteck> hindernisse){
+
+    }
+
+    public void hindernisseUmfahren(){
+
     }
 
     /**
